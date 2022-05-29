@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/adapter_list_layout" />
+        android:background="@color/white">
+
+        <!--   下拉刷新提示 （ClassicsFooter表示上拉加载时的提示）    -->
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/black_70" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/adapter_list_layout" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </LinearLayout>

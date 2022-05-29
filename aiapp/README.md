@@ -38,18 +38,35 @@
  app:titleTextSize="@dimen/sp_18"
 
 
-## BaseQuickAdapter / 下拉刷新 / 上拉加载
-- 下拉刷新,通过设置代码：
-    adapter.isUpFetchEnable = true;
-    adapter.setUpFetchListener {
-        loadData()
-    }
-- 上拉加载,通过设置代码：
-    adapter.setEnableLoadMore(true)
-    adapter.setOnLoadMoreListener({
-       //do something
-    },recyclerView)
+## BaseQuickAdapter
+具体使用可参考ChildFragment中的列表，其他功能：
+- 设置空布局
+- 设置header/ footer
+- 开启动画：adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+- 默认动画只执行一次：adapter.isFirstOnly(false);
+- 出现了头布局就不会显示Empty：
+     adapter.setHeaderAndEmpty(true);
+     或者
+     adapter.setHeaderFooterEmpty(true,true);
 - 更多功能参考：https://blog.csdn.net/qq_35957672/article/details/100766004
              https://blog.csdn.net/qq_35957672/article/details/100766004
              https://blog.csdn.net/weixin_45120905/article/details/108107842
+
+
+## SmartRefreshLayout 下拉刷新/上拉加载
+- 通用设置：
+    smartRefreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
+         override fun onRefresh(refreshLayout: RefreshLayout) {
+            //下拉刷新
+         }
+
+         override fun onLoadMore(refreshLayout: RefreshLayout) {
+            //上拉加载
+         }
+    })
+- 结束刷新：smartRefreshLayout.finishRefresh()
+- 结束加载：smartRefreshLayout.finishRefresh()
+- 刷新不可用: smartRefreshLayout.finishRefresh()
+- 上拉加载不可用:smartRefreshLayout.isEnableLoadMore = false
+- 更多使用细节可参考网上资料
 
