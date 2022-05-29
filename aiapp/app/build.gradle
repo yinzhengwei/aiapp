@@ -1,0 +1,144 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'//序列化插件，在需要序列化的class上方增加注解：@Parcelize，并且实现: Parcelable接口即可
+    id 'kotlin-kapt'
+}
+kapt {
+    arguments {
+        // ARouter 配置
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCodeVersion
+        versionName rootProject.ext.versionNameVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //除了默认语言外只支持英语
+        resConfigs('en')
+    }
+
+    signingConfigs {
+        signConfig {
+            storeFile file('../aiapp.jks')
+            storePassword rootProject.ext.storePassword
+            keyAlias rootProject.ext.keyAlias
+            keyPassword rootProject.ext.keyPassword
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled true
+            //buildConfigField("String", "HOST", "${host_test}")
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signConfig
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signConfig
+        }
+    }
+
+    //清除重复的文件
+    packagingOptions {
+        //pickFirst 'META-INF/*'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation "androidx.core:core-ktx:$core_ktxVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "androidx.vectordrawable:vectordrawable:$vectordrawableVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$livedataVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodelVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_fragmentViewVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_UiVersion"
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$testJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+
+    //沉浸式状态栏效果
+    //implementation "com.jaeger.statusbarutil:library:$statusbarUtilVersion"
+    implementation "com.github.crossoverone:StatusBarUtil:$statuSbarUtilVersion"
+
+    // SP存储--MMVK
+    implementation "com.tencent:mmkv-static:$mmkvVersion"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "org.greenrobot:eventbus:$eventbus"
+
+    // rx
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava2RxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxjava2RxandroidVersion"
+    implementation "io.reactivex:rxjava-joins:$rxjava2JoinVersion"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2Gson"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    // okhttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3Version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
+
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideCompilerVersion"
+    //变换特效（https://github.com/schle/glide-transformations）
+    implementation "jp.wasabeef:glide-transformations:$glideTransformationsVersion"
+    implementation "jp.co.cyberagent.android.gpuimage:gpuimage-library:$gpuimageVersion"
+
+    // 今日头条适配
+    implementation "me.jessyan:autosize:$autosize"
+
+    //万能适配器
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$baseQuickAdapterVersion"
+
+    //ARouter
+    kapt "com.alibaba:arouter-compiler:$arouterCompilerVersion"
+    implementation "com.alibaba:arouter-api:$arouterVersion"
+
+    //协程
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+}
