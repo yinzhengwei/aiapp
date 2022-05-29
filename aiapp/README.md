@@ -64,6 +64,7 @@
             //上拉加载
          }
     })
+- 设置下拉header样式：在布局文件中SmartRefreshLayout下添加ClassicsHeader控件，可参考fg_child_layout.xml
 - 结束刷新：smartRefreshLayout.finishRefresh()
 - 结束加载：smartRefreshLayout.finishRefresh()
 - 刷新不可用: smartRefreshLayout.finishRefresh()
