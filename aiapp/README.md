@@ -49,7 +49,7 @@
 - 设置空布局
 - 设置header/ footer
 - 开启动画：adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
-- 默认动画只执行一次：adapter.isFirstOnly(false);
+- 是否只让条目动画只执行一次：adapter.isFirstOnly(false);
 - 出现了头布局就不会显示Empty：
 ```
      adapter.setHeaderAndEmpty(true);
@@ -77,8 +77,12 @@
 ```
 - 设置下拉header样式：在布局文件中SmartRefreshLayout下添加ClassicsHeader控件，可参考fg_child_layout.xml
 - 结束刷新：smartRefreshLayout.finishRefresh()
-- 结束加载：smartRefreshLayout.finishRefresh()
+- 结束加载：smartRefreshLayout.finishLoadMore()
 - 刷新不可用: smartRefreshLayout.finishRefresh()
 - 上拉加载不可用:smartRefreshLayout.isEnableLoadMore = false
-- 更多使用细节可参考网上资料
+- 更多使用细节可参考网上资料:
+    https://www.jianshu.com/p/29e315ff44a6
+    https://www.cnblogs.com/shen-hua/p/8052459.html
+    https://gitee.com/scwang90/SmartRefreshLayout
+    https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_property.md
 

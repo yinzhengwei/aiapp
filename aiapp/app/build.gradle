@@ -22,8 +22,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        //除了默认语言外只支持英语
-        resConfigs('en')
+        //除了默认语言外只支持中文，如果需要支持英语，则添加'en'
+        resConfigs('zh')
     }
 
     signingConfigs {

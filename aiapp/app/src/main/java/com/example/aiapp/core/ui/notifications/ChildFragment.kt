@@ -18,6 +18,7 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
  */
 class ChildFragment : BaseFragment<FgChildLayoutBinding, NotificationsViewModel>() {
 
+    private var cid = -1
     private val adapter = ListAdapter()
 
     override fun layoutInflate() = FgChildLayoutBinding.inflate(layoutInflater)
@@ -44,12 +45,6 @@ class ChildFragment : BaseFragment<FgChildLayoutBinding, NotificationsViewModel>
             binding.smartRefreshLayout.run {
                 //结束刷新
                 finishRefresh()
-                //刷新不可用
-                binding.smartRefreshLayout.isEnableRefresh = false
-                //结束加载
-                //binding.smartRefreshLayout.finishRefresh()
-                //上拉加载不可用
-                //binding.smartRefreshLayout.isEnableLoadMore = false
             }
         }
 
@@ -60,15 +55,17 @@ class ChildFragment : BaseFragment<FgChildLayoutBinding, NotificationsViewModel>
         if (binding.recyclerView.childCount > 0) {
             return
         }
+
         //发出网络请求
         arguments?.run {
-            viewModel.loadListData(getInt("cid"))
+            cid = getInt("cid")
+            viewModel.loadListData(cid)
         }
     }
 
     fun initAdapter() {
         //开启动画
-        adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        //adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM)
 
         //因为有些人不希望第一页看到动画，或者说希望前几个条目加载不需要有动画，所以可以设置不显示动画数量
         val layoutManager = binding.recyclerView.layoutManager as LinearLayoutManager
@@ -82,12 +79,14 @@ class ChildFragment : BaseFragment<FgChildLayoutBinding, NotificationsViewModel>
     }
 
     private fun initRefresh() {
+        binding.smartRefreshLayout.setEnableOverScrollBounce(true);//是否启用越界回弹
         binding.smartRefreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
             override fun onRefresh(refreshLayout: RefreshLayout) {
-                initData()
+                viewModel.loadListData(cid)
             }
 
             override fun onLoadMore(refreshLayout: RefreshLayout) {
+                refreshLayout.finishLoadMore(2000, true, false)
             }
         })
 

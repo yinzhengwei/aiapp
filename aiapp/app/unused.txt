@@ -3797,11 +3797,24 @@ androidx.core.view.DragStartHelper$1
 androidx.core.view.DragStartHelper$2
 androidx.core.view.DragStartHelper$OnDragStartListener
 androidx.core.view.DragStartHelper
-androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImpl
-androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplBase$GestureHandler
-androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplBase
-androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2
-androidx.core.view.GestureDetectorCompat
+androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImpl:
+    public abstract boolean isLongpressEnabled()
+    public abstract void setIsLongpressEnabled(boolean)
+    public abstract void setOnDoubleTapListener(android.view.GestureDetector$OnDoubleTapListener)
+androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplBase:
+    private static final int LONG_PRESS
+    private static final int SHOW_PRESS
+    private static final int TAP
+    public boolean isLongpressEnabled()
+    public void setIsLongpressEnabled(boolean)
+androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2:
+    public boolean isLongpressEnabled()
+    public void setIsLongpressEnabled(boolean)
+    public void setOnDoubleTapListener(android.view.GestureDetector$OnDoubleTapListener)
+androidx.core.view.GestureDetectorCompat:
+    public boolean isLongpressEnabled()
+    public void setIsLongpressEnabled(boolean)
+    public void setOnDoubleTapListener(android.view.GestureDetector$OnDoubleTapListener)
 androidx.core.view.GravityCompat:
     public static final int END
     public static final int RELATIVE_HORIZONTAL_GRAVITY_MASK
@@ -3916,7 +3929,6 @@ androidx.core.view.MotionEventCompat:
     private void <init>()
     public static int findPointerIndex(android.view.MotionEvent,int)
     public static int getActionIndex(android.view.MotionEvent)
-    public static int getActionMasked(android.view.MotionEvent)
     public static float getAxisValue(android.view.MotionEvent,int)
     public static float getAxisValue(android.view.MotionEvent,int,int)
     public static int getButtonState(android.view.MotionEvent)
@@ -3966,7 +3978,13 @@ androidx.core.view.PointerIconCompat:
     public static androidx.core.view.PointerIconCompat create(android.graphics.Bitmap,float,float)
     public static androidx.core.view.PointerIconCompat load(android.content.res.Resources,int)
 androidx.core.view.ScaleGestureDetectorCompat
-androidx.core.view.ScrollingView
+androidx.core.view.ScrollingView:
+    public abstract int computeHorizontalScrollExtent()
+    public abstract int computeHorizontalScrollOffset()
+    public abstract int computeHorizontalScrollRange()
+    public abstract int computeVerticalScrollExtent()
+    public abstract int computeVerticalScrollOffset()
+    public abstract int computeVerticalScrollRange()
 androidx.core.view.VelocityTrackerCompat
 androidx.core.view.ViewCompat$Api15Impl:
     private void <init>()
@@ -6984,7 +7002,11 @@ androidx.recyclerview.widget.AsyncListUtil$2
 androidx.recyclerview.widget.AsyncListUtil$DataCallback
 androidx.recyclerview.widget.AsyncListUtil$ViewCallback
 androidx.recyclerview.widget.AsyncListUtil
-androidx.recyclerview.widget.BatchingListUpdateCallback
+androidx.recyclerview.widget.BatchingListUpdateCallback:
+    private static final int TYPE_ADD
+    private static final int TYPE_CHANGE
+    private static final int TYPE_NONE
+    private static final int TYPE_REMOVE
 androidx.recyclerview.widget.ChildHelper$Bucket:
     static final int BITS_PER_WORD
     static final long LAST_BIT
@@ -6993,14 +7015,23 @@ androidx.recyclerview.widget.ChildHelper:
     private static final java.lang.String TAG
 androidx.recyclerview.widget.DefaultItemAnimator:
     private static final boolean DEBUG
-androidx.recyclerview.widget.DiffUtil$1
-androidx.recyclerview.widget.DiffUtil$Callback
-androidx.recyclerview.widget.DiffUtil$DiffResult
+androidx.recyclerview.widget.DiffUtil$DiffResult:
+    private static final int FLAG_CHANGED
+    private static final int FLAG_IGNORE
+    private static final int FLAG_MASK
+    private static final int FLAG_MOVED_CHANGED
+    private static final int FLAG_MOVED_NOT_CHANGED
+    private static final int FLAG_NOT_CHANGED
+    private static final int FLAG_OFFSET
+    public static final int NO_POSITION
+    public int convertNewPositionToOld(int)
+    public int convertOldPositionToNew(int)
+    public void dispatchUpdatesTo(androidx.recyclerview.widget.RecyclerView$Adapter)
+    java.util.List getSnakes()
 androidx.recyclerview.widget.DiffUtil$ItemCallback
-androidx.recyclerview.widget.DiffUtil$PostponedUpdate
-androidx.recyclerview.widget.DiffUtil$Range
-androidx.recyclerview.widget.DiffUtil$Snake
-androidx.recyclerview.widget.DiffUtil
+androidx.recyclerview.widget.DiffUtil:
+    private void <init>()
+    public static androidx.recyclerview.widget.DiffUtil$DiffResult calculateDiff(androidx.recyclerview.widget.DiffUtil$Callback)
 androidx.recyclerview.widget.DividerItemDecoration:
     public static final int HORIZONTAL
     private static final java.lang.String TAG
@@ -7032,11 +7063,6 @@ androidx.recyclerview.widget.FastScroller:
 androidx.recyclerview.widget.GridLayoutManager$LayoutParams:
     public static final int INVALID_SPAN_ID
     public void <init>(androidx.recyclerview.widget.RecyclerView$LayoutParams)
-androidx.recyclerview.widget.GridLayoutManager$SpanSizeLookup:
-    public boolean isSpanGroupIndexCacheEnabled()
-    public boolean isSpanIndexCacheEnabled()
-    public void setSpanGroupIndexCacheEnabled(boolean)
-    public void setSpanIndexCacheEnabled(boolean)
 androidx.recyclerview.widget.GridLayoutManager:
     private static final boolean DEBUG
     public static final int DEFAULT_SPAN_COUNT
@@ -7047,20 +7073,55 @@ androidx.recyclerview.widget.GridLayoutManager:
     public void setUsingSpansToEstimateScrollbarDimensions(boolean)
 androidx.recyclerview.widget.ItemTouchHelper$1
 androidx.recyclerview.widget.ItemTouchHelper$2
-androidx.recyclerview.widget.ItemTouchHelper$3
-androidx.recyclerview.widget.ItemTouchHelper$4
-androidx.recyclerview.widget.ItemTouchHelper$5
-androidx.recyclerview.widget.ItemTouchHelper$Callback$1
-androidx.recyclerview.widget.ItemTouchHelper$Callback$2
-androidx.recyclerview.widget.ItemTouchHelper$Callback
 androidx.recyclerview.widget.ItemTouchHelper$ItemTouchHelperGestureListener
-androidx.recyclerview.widget.ItemTouchHelper$RecoverAnimation$1
-androidx.recyclerview.widget.ItemTouchHelper$RecoverAnimation
 androidx.recyclerview.widget.ItemTouchHelper$SimpleCallback
-androidx.recyclerview.widget.ItemTouchHelper$ViewDropHandler
-androidx.recyclerview.widget.ItemTouchHelper
-androidx.recyclerview.widget.ItemTouchUIUtil
-androidx.recyclerview.widget.ItemTouchUIUtilImpl
+androidx.recyclerview.widget.ItemTouchHelper:
+    static final int ACTION_MODE_DRAG_MASK
+    private static final int ACTION_MODE_IDLE_MASK
+    static final int ACTION_MODE_SWIPE_MASK
+    public static final int ACTION_STATE_DRAG
+    public static final int ACTION_STATE_IDLE
+    public static final int ACTION_STATE_SWIPE
+    private static final int ACTIVE_POINTER_ID_NONE
+    public static final int ANIMATION_TYPE_DRAG
+    public static final int ANIMATION_TYPE_SWIPE_CANCEL
+    public static final int ANIMATION_TYPE_SWIPE_SUCCESS
+    private static final boolean DEBUG
+    static final int DIRECTION_FLAG_COUNT
+    public static final int DOWN
+    public static final int END
+    public static final int LEFT
+    private static final int PIXELS_PER_SECOND
+    public static final int RIGHT
+    public static final int START
+    private static final java.lang.String TAG
+    public static final int UP
+    private java.util.List mDistances
+    androidx.core.view.GestureDetectorCompat mGestureDetector
+    float mInitialTouchX
+    float mInitialTouchY
+    private androidx.recyclerview.widget.ItemTouchHelper$ItemTouchHelperGestureListener mItemTouchHelperGestureListener
+    private final androidx.recyclerview.widget.RecyclerView$OnItemTouchListener mOnItemTouchListener
+    final java.lang.Runnable mScrollRunnable
+    private int mSlop
+    private java.util.List mSwapTargets
+    private android.graphics.Rect mTmpRect
+    public void <init>(androidx.recyclerview.widget.ItemTouchHelper$Callback)
+    public void attachToRecyclerView(androidx.recyclerview.widget.RecyclerView)
+    void checkSelectForSwipe(int,android.view.MotionEvent,int)
+    private void destroyCallbacks()
+    androidx.recyclerview.widget.ItemTouchHelper$RecoverAnimation findAnimation(android.view.MotionEvent)
+    android.view.View findChildView(android.view.MotionEvent)
+    private java.util.List findSwapTargets(androidx.recyclerview.widget.RecyclerView$ViewHolder)
+    private androidx.recyclerview.widget.RecyclerView$ViewHolder findSwipedView(android.view.MotionEvent)
+    private static boolean hitTest(android.view.View,float,float,float,float)
+    void moveIfNecessary(androidx.recyclerview.widget.RecyclerView$ViewHolder)
+    boolean scrollIfNecessary()
+    private void setupCallbacks()
+    private void startGestureDetection()
+    public void startSwipe(androidx.recyclerview.widget.RecyclerView$ViewHolder)
+    private void stopGestureDetection()
+    void updateDxDy(android.view.MotionEvent,int,int)
 androidx.recyclerview.widget.LayoutState:
     static final int INVALID_LAYOUT
     static final int ITEM_DIRECTION_HEAD
@@ -7079,7 +7140,6 @@ androidx.recyclerview.widget.LinearLayoutManager$LayoutState:
 androidx.recyclerview.widget.LinearSnapHelper
 androidx.recyclerview.widget.ListAdapter$1
 androidx.recyclerview.widget.ListAdapter
-androidx.recyclerview.widget.ListUpdateCallback
 androidx.recyclerview.widget.MessageThreadUtil$1$1
 androidx.recyclerview.widget.MessageThreadUtil$1
 androidx.recyclerview.widget.MessageThreadUtil$2$1
@@ -7115,7 +7175,6 @@ androidx.recyclerview.widget.RecyclerView$ItemAnimator:
     public static final int FLAG_MOVED
     public static final int FLAG_REMOVED
     public final void dispatchAnimationStarted(androidx.recyclerview.widget.RecyclerView$ViewHolder)
-    public final boolean isRunning(androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemAnimatorFinishedListener)
     public void onAnimationStarted(androidx.recyclerview.widget.RecyclerView$ViewHolder)
     public void setAddDuration(long)
     public void setChangeDuration(long)
@@ -7184,9 +7243,7 @@ androidx.recyclerview.widget.StaggeredGridLayoutManager$Span:
     static final int INVALID_LINE
     public int findFirstCompletelyVisibleItemPosition()
     public int findFirstVisibleItemPosition()
-    public int findLastCompletelyVisibleItemPosition()
     public int findLastVisibleItemPosition()
-    int findOneVisibleChild(int,int,boolean)
 androidx.recyclerview.widget.StaggeredGridLayoutManager:
     static final boolean DEBUG
     public static final int GAP_HANDLING_LAZY
@@ -7200,12 +7257,10 @@ androidx.recyclerview.widget.StaggeredGridLayoutManager:
     public void <init>(int,int)
     public int[] findFirstCompletelyVisibleItemPositions(int[])
     public int[] findFirstVisibleItemPositions(int[])
-    public int[] findLastCompletelyVisibleItemPositions(int[])
     public int[] findLastVisibleItemPositions(int[])
     public int getGapStrategy()
     public int getOrientation()
     public boolean getReverseLayout()
-    public int getSpanCount()
     public void scrollToPositionWithOffset(int,int)
     public void setGapStrategy(int)
 androidx.recyclerview.widget.ThreadUtil$BackgroundCallback
@@ -9033,211 +9088,6 @@ com.bumptech.glide.util.pool.StateVerifier:
     private static final boolean DEBUG
 com.chad.library.BuildConfig
 com.chad.library.R
-com.chad.library.adapter.base.BaseItemDraggableAdapter$1
-com.chad.library.adapter.base.BaseItemDraggableAdapter$2
-com.chad.library.adapter.base.BaseItemDraggableAdapter
-com.chad.library.adapter.base.BaseMultiItemQuickAdapter
-com.chad.library.adapter.base.BaseQuickAdapter$1
-com.chad.library.adapter.base.BaseQuickAdapter$2
-com.chad.library.adapter.base.BaseQuickAdapter$AnimationType
-com.chad.library.adapter.base.BaseQuickAdapter$OnItemChildClickListener
-com.chad.library.adapter.base.BaseQuickAdapter$OnItemChildLongClickListener
-com.chad.library.adapter.base.BaseQuickAdapter:
-    public static final int ALPHAIN
-    public static final int EMPTY_VIEW
-    public static final int FOOTER_VIEW
-    public static final int HEADER_VIEW
-    public static final int LOADING_VIEW
-    public static final int SCALEIN
-    public static final int SLIDEIN_BOTTOM
-    public static final int SLIDEIN_LEFT
-    public static final int SLIDEIN_RIGHT
-    private com.chad.library.adapter.base.BaseQuickAdapter$OnItemChildClickListener mOnItemChildClickListener
-    private com.chad.library.adapter.base.BaseQuickAdapter$OnItemChildLongClickListener mOnItemChildLongClickListener
-    public void <init>(java.util.List)
-    static synthetic boolean access$000(com.chad.library.adapter.base.BaseQuickAdapter,androidx.recyclerview.widget.LinearLayoutManager)
-    static synthetic int access$100(com.chad.library.adapter.base.BaseQuickAdapter,int[])
-    public void add(int,java.lang.Object)
-    public void addData(int,java.lang.Object)
-    public void addData(int,java.util.Collection)
-    public void addData(java.lang.Object)
-    public void addData(java.util.Collection)
-    public int addFooterView(android.view.View)
-    public int addFooterView(android.view.View,int)
-    public int addFooterView(android.view.View,int,int)
-    public int addHeaderView(android.view.View)
-    public int addHeaderView(android.view.View,int)
-    public int addHeaderView(android.view.View,int,int)
-    public void bindToRecyclerView(androidx.recyclerview.widget.RecyclerView)
-    private void checkNotNull()
-    public void closeLoadAnimation()
-    public int collapse(int)
-    public int collapse(int,boolean)
-    public int collapse(int,boolean,boolean)
-    private void compatibilityDataSizeChanged(int)
-    public void disableLoadMoreIfNotFullPage()
-    public void disableLoadMoreIfNotFullPage(androidx.recyclerview.widget.RecyclerView)
-    public void enableLoadMoreEndClick(boolean)
-    public int expand(int)
-    public int expand(int,boolean)
-    public int expand(int,boolean,boolean)
-    public int expandAll(int,boolean)
-    public int expandAll(int,boolean,boolean)
-    public void expandAll()
-    public android.view.View getEmptyView()
-    private com.chad.library.adapter.base.entity.IExpandable getExpandableItem(int)
-    public android.widget.LinearLayout getFooterLayout()
-    public int getFooterViewsCount()
-    public android.widget.LinearLayout getHeaderLayout()
-    public int getHeaderViewsCount()
-    private int getItemPosition(java.lang.Object)
-    public com.chad.library.adapter.base.util.MultiTypeDelegate getMultiTypeDelegate()
-    public final com.chad.library.adapter.base.BaseQuickAdapter$OnItemChildClickListener getOnItemChildClickListener()
-    public final com.chad.library.adapter.base.BaseQuickAdapter$OnItemChildLongClickListener getOnItemChildLongClickListener()
-    public int getParentPosition(java.lang.Object)
-    private int getTheBiggestNumber(int[])
-    public android.view.View getViewByPosition(int,int)
-    public android.view.View getViewByPosition(androidx.recyclerview.widget.RecyclerView,int,int)
-    public boolean hasSubItems(com.chad.library.adapter.base.entity.IExpandable)
-    public boolean isExpandable(java.lang.Object)
-    public void isFirstOnly(boolean)
-    private boolean isFullScreen(androidx.recyclerview.widget.LinearLayoutManager)
-    public boolean isLoadMoreEnable()
-    public boolean isLoading()
-    public void isUseEmpty(boolean)
-    public void loadMoreComplete()
-    public void loadMoreEnd()
-    public void loadMoreEnd(boolean)
-    public void loadMoreFail()
-    public void openLoadAnimation()
-    public void openLoadAnimation(int)
-    public void openLoadAnimation(com.chad.library.adapter.base.animation.BaseAnimation)
-    private int recursiveCollapse(int)
-    private int recursiveExpand(int,java.util.List)
-    public final void refreshNotifyItemChanged(int)
-    public void remove(int)
-    public void removeAllFooterView()
-    public void removeAllHeaderView()
-    public void replaceData(java.util.Collection)
-    public void setAutoLoadMoreSize(int)
-    public void setData(int,java.lang.Object)
-    public void setDuration(int)
-    public void setEmptyView(int)
-    public void setEmptyView(int,android.view.ViewGroup)
-    public int setFooterView(android.view.View)
-    public int setFooterView(android.view.View,int)
-    public int setFooterView(android.view.View,int,int)
-    public void setFooterViewAsFlow(boolean)
-    public void setHeaderAndEmpty(boolean)
-    public void setHeaderFooterEmpty(boolean,boolean)
-    public int setHeaderView(android.view.View)
-    public int setHeaderView(android.view.View,int)
-    public int setHeaderView(android.view.View,int,int)
-    public void setHeaderViewAsFlow(boolean)
-    public void setLoadMoreView(com.chad.library.adapter.base.loadmore.LoadMoreView)
-    public void setMultiTypeDelegate(com.chad.library.adapter.base.util.MultiTypeDelegate)
-    public void setNewDiffData(com.chad.library.adapter.base.diff.BaseQuickDiffCallback)
-    public void setNewDiffData(com.chad.library.adapter.base.diff.BaseQuickDiffCallback,boolean)
-    public void setNotDoAnimationCount(int)
-    public void setOnItemChildClickListener(com.chad.library.adapter.base.BaseQuickAdapter$OnItemChildClickListener)
-    public void setOnItemChildLongClickListener(com.chad.library.adapter.base.BaseQuickAdapter$OnItemChildLongClickListener)
-    public void setOnItemLongClickListener(com.chad.library.adapter.base.BaseQuickAdapter$OnItemLongClickListener)
-    public void setOnLoadMoreListener(com.chad.library.adapter.base.BaseQuickAdapter$RequestLoadMoreListener)
-    public void setPreLoadNumber(int)
-    public void setSpanSizeLookup(com.chad.library.adapter.base.BaseQuickAdapter$SpanSizeLookup)
-    public void setStartUpFetchPosition(int)
-com.chad.library.adapter.base.BaseSectionMultiItemQuickAdapter
-com.chad.library.adapter.base.BaseSectionQuickAdapter
-com.chad.library.adapter.base.BaseViewHolder$1
-com.chad.library.adapter.base.BaseViewHolder$2
-com.chad.library.adapter.base.BaseViewHolder:
-    private java.lang.Object associatedObject
-    static synthetic com.chad.library.adapter.base.BaseQuickAdapter access$000(com.chad.library.adapter.base.BaseViewHolder)
-    public varargs com.chad.library.adapter.base.BaseViewHolder addOnClickListener(int[])
-    public varargs com.chad.library.adapter.base.BaseViewHolder addOnLongClickListener(int[])
-    public java.lang.Object getAssociatedObject()
-    public java.util.HashSet getChildClickViewIds()
-    public android.view.View getConvertView()
-    public java.util.HashSet getItemChildLongClickViewIds()
-    public java.util.Set getNestViews()
-    public com.chad.library.adapter.base.BaseViewHolder linkify(int)
-    public com.chad.library.adapter.base.BaseViewHolder setAdapter(int,android.widget.Adapter)
-    public com.chad.library.adapter.base.BaseViewHolder setAlpha(int,float)
-    public void setAssociatedObject(java.lang.Object)
-    public com.chad.library.adapter.base.BaseViewHolder setBackgroundColor(int,int)
-    public com.chad.library.adapter.base.BaseViewHolder setBackgroundRes(int,int)
-    public com.chad.library.adapter.base.BaseViewHolder setChecked(int,boolean)
-    public com.chad.library.adapter.base.BaseViewHolder setEnabled(int,boolean)
-    public com.chad.library.adapter.base.BaseViewHolder setImageBitmap(int,android.graphics.Bitmap)
-    public com.chad.library.adapter.base.BaseViewHolder setImageDrawable(int,android.graphics.drawable.Drawable)
-    public com.chad.library.adapter.base.BaseViewHolder setImageResource(int,int)
-    public com.chad.library.adapter.base.BaseViewHolder setMax(int,int)
-    public varargs com.chad.library.adapter.base.BaseViewHolder setNestView(int[])
-    public com.chad.library.adapter.base.BaseViewHolder setOnCheckedChangeListener(int,android.widget.CompoundButton$OnCheckedChangeListener)
-    public com.chad.library.adapter.base.BaseViewHolder setOnClickListener(int,android.view.View$OnClickListener)
-    public com.chad.library.adapter.base.BaseViewHolder setOnItemClickListener(int,android.widget.AdapterView$OnItemClickListener)
-    public com.chad.library.adapter.base.BaseViewHolder setOnItemLongClickListener(int,android.widget.AdapterView$OnItemLongClickListener)
-    public com.chad.library.adapter.base.BaseViewHolder setOnItemSelectedClickListener(int,android.widget.AdapterView$OnItemSelectedListener)
-    public com.chad.library.adapter.base.BaseViewHolder setOnLongClickListener(int,android.view.View$OnLongClickListener)
-    public com.chad.library.adapter.base.BaseViewHolder setOnTouchListener(int,android.view.View$OnTouchListener)
-    public com.chad.library.adapter.base.BaseViewHolder setProgress(int,int)
-    public com.chad.library.adapter.base.BaseViewHolder setProgress(int,int,int)
-    public com.chad.library.adapter.base.BaseViewHolder setRating(int,float)
-    public com.chad.library.adapter.base.BaseViewHolder setRating(int,float,int)
-    public com.chad.library.adapter.base.BaseViewHolder setTag(int,int,java.lang.Object)
-    public com.chad.library.adapter.base.BaseViewHolder setTag(int,java.lang.Object)
-    public com.chad.library.adapter.base.BaseViewHolder setText(int,int)
-    public com.chad.library.adapter.base.BaseViewHolder setTextColor(int,int)
-    public com.chad.library.adapter.base.BaseViewHolder setTypeface(int,android.graphics.Typeface)
-    public varargs com.chad.library.adapter.base.BaseViewHolder setTypeface(android.graphics.Typeface,int[])
-    public com.chad.library.adapter.base.BaseViewHolder setVisible(int,boolean)
-com.chad.library.adapter.base.MultipleItemRvAdapter$1
-com.chad.library.adapter.base.MultipleItemRvAdapter$2
-com.chad.library.adapter.base.MultipleItemRvAdapter$3
-com.chad.library.adapter.base.MultipleItemRvAdapter
-com.chad.library.adapter.base.animation.AlphaInAnimation:
-    private static final float DEFAULT_ALPHA_FROM
-com.chad.library.adapter.base.animation.ScaleInAnimation
-com.chad.library.adapter.base.animation.SlideInBottomAnimation
-com.chad.library.adapter.base.animation.SlideInLeftAnimation
-com.chad.library.adapter.base.animation.SlideInRightAnimation
-com.chad.library.adapter.base.callback.ItemDragAndSwipeCallback
-com.chad.library.adapter.base.diff.BaseQuickAdapterListUpdateCallback
-com.chad.library.adapter.base.diff.BaseQuickDiffCallback
-com.chad.library.adapter.base.entity.AbstractExpandableItem
-com.chad.library.adapter.base.entity.IExpandable
-com.chad.library.adapter.base.entity.MultiItemEntity
-com.chad.library.adapter.base.listener.OnItemChildClickListener
-com.chad.library.adapter.base.listener.OnItemChildLongClickListener
-com.chad.library.adapter.base.listener.OnItemClickListener
-com.chad.library.adapter.base.listener.OnItemDragListener
-com.chad.library.adapter.base.listener.OnItemLongClickListener
-com.chad.library.adapter.base.listener.OnItemSwipeListener
-com.chad.library.adapter.base.listener.SimpleClickListener$ItemTouchHelperGestureListener$1
-com.chad.library.adapter.base.listener.SimpleClickListener$ItemTouchHelperGestureListener
-com.chad.library.adapter.base.listener.SimpleClickListener
-com.chad.library.adapter.base.loadmore.LoadMoreView:
-    public static final int STATUS_DEFAULT
-    public static final int STATUS_END
-    public static final int STATUS_FAIL
-    public static final int STATUS_LOADING
-    public boolean isLoadEndGone()
-    public final void setLoadMoreEndGone(boolean)
-com.chad.library.adapter.base.provider.BaseItemProvider
-com.chad.library.adapter.base.util.MultiTypeDelegate:
-    private static final int DEFAULT_VIEW_TYPE
-    private boolean autoMode
-    private android.util.SparseIntArray layouts
-    private boolean selfMode
-    public void <init>()
-    public void <init>(android.util.SparseIntArray)
-    private void addItemType(int,int)
-    private void checkMode(boolean)
-    protected abstract int getItemType(java.lang.Object)
-    public com.chad.library.adapter.base.util.MultiTypeDelegate registerItemType(int,int)
-    public varargs com.chad.library.adapter.base.util.MultiTypeDelegate registerItemTypeAutoIncrease(int[])
-com.chad.library.adapter.base.util.ProviderDelegate
-com.chad.library.adapter.base.util.TouchEventUtil
 com.example.aiapp.BR
 com.example.aiapp.BuildConfig:
     public static final java.lang.String APPLICATION_ID
@@ -9353,6 +9203,227 @@ com.example.aiapp.widget.navigation.NavHostFragment:
     public static com.example.aiapp.widget.navigation.NavHostFragment create(int,android.os.Bundle)
 com.example.aiapp.widget.navigation.NavigationCacheHelper:
     public final void setNavigator(androidx.fragment.app.Fragment,com.google.android.material.bottomnavigation.BottomNavigationView,java.util.List)
+com.scwang.smartrefresh.layout.BuildConfig
+com.scwang.smartrefresh.layout.R
+com.scwang.smartrefresh.layout.SmartRefreshLayout$10$1
+com.scwang.smartrefresh.layout.SmartRefreshLayout$10$2
+com.scwang.smartrefresh.layout.SmartRefreshLayout$10
+com.scwang.smartrefresh.layout.SmartRefreshLayout$11$1
+com.scwang.smartrefresh.layout.SmartRefreshLayout$11$2
+com.scwang.smartrefresh.layout.SmartRefreshLayout$11
+com.scwang.smartrefresh.layout.SmartRefreshLayout$LayoutParams:
+    public void <init>(android.view.ViewGroup$MarginLayoutParams)
+com.scwang.smartrefresh.layout.SmartRefreshLayout$RefreshKernelImpl:
+    public com.scwang.smartrefresh.layout.api.RefreshContent getRefreshContent()
+    public com.scwang.smartrefresh.layout.api.RefreshKernel requestDefaultTranslationContentFor(com.scwang.smartrefresh.layout.api.RefreshInternal,boolean)
+    public com.scwang.smartrefresh.layout.api.RefreshKernel requestRemeasureHeightFor(com.scwang.smartrefresh.layout.api.RefreshInternal)
+com.scwang.smartrefresh.layout.SmartRefreshLayout:
+    public boolean autoLoadMore()
+    public boolean autoLoadMore(int,int,float)
+    public boolean autoRefresh()
+    public boolean autoRefresh(int,int,float)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout finishLoadMore()
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout finishLoadMore(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore()
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(int)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(int,boolean,boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout finishLoadMoreWithNoMoreData()
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMoreWithNoMoreData()
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout finishRefresh(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishRefresh()
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishRefresh(int)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishRefresh(int,boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishRefresh(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setDisableContentWhenLoading(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setDisableContentWhenLoading(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setDisableContentWhenRefresh(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setDisableContentWhenRefresh(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setDragRate(float)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setDragRate(float)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableClipFooterWhenFixedBehind(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableClipFooterWhenFixedBehind(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableClipHeaderWhenFixedBehind(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableClipHeaderWhenFixedBehind(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableFooterFollowWhenLoadFinished(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableFooterFollowWhenLoadFinished(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableFooterTranslationContent(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableFooterTranslationContent(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableHeaderTranslationContent(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableHeaderTranslationContent(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableLoadMore(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableLoadMore(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableLoadMoreWhenContentNotFull(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableLoadMoreWhenContentNotFull(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableOverScrollBounce(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableOverScrollDrag(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableOverScrollDrag(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnablePureScrollMode(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnablePureScrollMode(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableRefresh(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableRefresh(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableScrollContentWhenLoaded(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableScrollContentWhenLoaded(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableScrollContentWhenRefreshed(boolean)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setEnableScrollContentWhenRefreshed(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setFooterHeight(float)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setFooterHeight(float)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setFooterInsetStart(float)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setFooterInsetStart(float)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setFooterMaxDragRate(float)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setFooterMaxDragRate(float)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setFooterTriggerRate(float)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setFooterTriggerRate(float)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setHeaderHeight(float)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setHeaderHeight(float)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setHeaderInsetStart(float)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setHeaderInsetStart(float)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setHeaderTriggerRate(float)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setHeaderTriggerRate(float)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setNoMoreData(boolean)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setOnLoadMoreListener(com.scwang.smartrefresh.layout.listener.OnLoadMoreListener)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setOnLoadMoreListener(com.scwang.smartrefresh.layout.listener.OnLoadMoreListener)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setOnMultiPurposeListener(com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setOnMultiPurposeListener(com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setOnRefreshListener(com.scwang.smartrefresh.layout.listener.OnRefreshListener)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setOnRefreshListener(com.scwang.smartrefresh.layout.listener.OnRefreshListener)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setOnRefreshLoadMoreListener(com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener)
+    public varargs com.scwang.smartrefresh.layout.SmartRefreshLayout setPrimaryColors(int[])
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setPrimaryColors(int[])
+    public varargs com.scwang.smartrefresh.layout.SmartRefreshLayout setPrimaryColorsId(int[])
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setPrimaryColorsId(int[])
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setReboundDuration(int)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setReboundDuration(int)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setReboundInterpolator(android.view.animation.Interpolator)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setReboundInterpolator(android.view.animation.Interpolator)
+    public com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshContent(android.view.View)
+    public com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshContent(android.view.View,int,int)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshFooter(com.scwang.smartrefresh.layout.api.RefreshFooter)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshFooter(com.scwang.smartrefresh.layout.api.RefreshFooter,int,int)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshHeader(com.scwang.smartrefresh.layout.api.RefreshHeader)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshHeader(com.scwang.smartrefresh.layout.api.RefreshHeader,int,int)
+    public com.scwang.smartrefresh.layout.SmartRefreshLayout setScrollBoundaryDecider(com.scwang.smartrefresh.layout.api.ScrollBoundaryDecider)
+    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout setScrollBoundaryDecider(com.scwang.smartrefresh.layout.api.ScrollBoundaryDecider)
+com.scwang.smartrefresh.layout.api.RefreshKernel:
+    public abstract com.scwang.smartrefresh.layout.api.RefreshContent getRefreshContent()
+    public abstract com.scwang.smartrefresh.layout.api.RefreshKernel requestDefaultTranslationContentFor(com.scwang.smartrefresh.layout.api.RefreshInternal,boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshKernel requestRemeasureHeightFor(com.scwang.smartrefresh.layout.api.RefreshInternal)
+com.scwang.smartrefresh.layout.api.RefreshLayout:
+    public abstract boolean autoLoadMore()
+    public abstract boolean autoLoadMore(int,int,float)
+    public abstract boolean autoRefresh()
+    public abstract boolean autoRefresh(int,int,float)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore()
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(int)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(int,boolean,boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMoreWithNoMoreData()
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishRefresh()
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishRefresh(int)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishRefresh(int,boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishRefresh(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshFooter getRefreshFooter()
+    public abstract com.scwang.smartrefresh.layout.api.RefreshHeader getRefreshHeader()
+    public abstract com.scwang.smartrefresh.layout.constant.RefreshState getState()
+    public abstract boolean isEnableRefresh()
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setDisableContentWhenLoading(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setDisableContentWhenRefresh(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setDragRate(float)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableClipFooterWhenFixedBehind(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableClipHeaderWhenFixedBehind(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableFooterFollowWhenLoadFinished(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableFooterTranslationContent(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableHeaderTranslationContent(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableLoadMore(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableLoadMoreWhenContentNotFull(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableOverScrollBounce(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableOverScrollDrag(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnablePureScrollMode(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableRefresh(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableScrollContentWhenLoaded(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setEnableScrollContentWhenRefreshed(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setFooterHeight(float)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setFooterInsetStart(float)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setFooterMaxDragRate(float)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setFooterTriggerRate(float)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setHeaderHeight(float)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setHeaderInsetStart(float)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setHeaderTriggerRate(float)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setNoMoreData(boolean)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setOnLoadMoreListener(com.scwang.smartrefresh.layout.listener.OnLoadMoreListener)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setOnMultiPurposeListener(com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setOnRefreshListener(com.scwang.smartrefresh.layout.listener.OnRefreshListener)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setOnRefreshLoadMoreListener(com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener)
+    public varargs abstract com.scwang.smartrefresh.layout.api.RefreshLayout setPrimaryColors(int[])
+    public varargs abstract com.scwang.smartrefresh.layout.api.RefreshLayout setPrimaryColorsId(int[])
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setReboundDuration(int)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setReboundInterpolator(android.view.animation.Interpolator)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshContent(android.view.View)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshContent(android.view.View,int,int)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshFooter(com.scwang.smartrefresh.layout.api.RefreshFooter)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshFooter(com.scwang.smartrefresh.layout.api.RefreshFooter,int,int)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshHeader(com.scwang.smartrefresh.layout.api.RefreshHeader)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setRefreshHeader(com.scwang.smartrefresh.layout.api.RefreshHeader,int,int)
+    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout setScrollBoundaryDecider(com.scwang.smartrefresh.layout.api.ScrollBoundaryDecider)
+com.scwang.smartrefresh.layout.footer.BallPulseFooter:
+    public static final int DEFAULT_SIZE
+    public com.scwang.smartrefresh.layout.footer.BallPulseFooter setSpinnerStyle(com.scwang.smartrefresh.layout.constant.SpinnerStyle)
+com.scwang.smartrefresh.layout.header.BezierRadarHeader:
+    protected static final byte PROPERTY_DOT_ALPHA
+    protected static final byte PROPERTY_RADAR_ANGLE
+    protected static final byte PROPERTY_RADAR_SCALE
+    protected static final byte PROPERTY_RIPPLE_RADIUS
+    protected static final byte PROPERTY_WAVE_HEIGHT
+    public com.scwang.smartrefresh.layout.header.BezierRadarHeader setAccentColorId(int)
+    public com.scwang.smartrefresh.layout.header.BezierRadarHeader setEnableHorizontalDrag(boolean)
+    public com.scwang.smartrefresh.layout.header.BezierRadarHeader setPrimaryColorId(int)
+com.scwang.smartrefresh.layout.header.ClassicsHeader:
+    public static final byte ID_TEXT_UPDATE
+    public com.scwang.smartrefresh.layout.header.ClassicsHeader setEnableLastTime(boolean)
+    public com.scwang.smartrefresh.layout.header.ClassicsHeader setLastUpdateText(java.lang.CharSequence)
+    public com.scwang.smartrefresh.layout.header.ClassicsHeader setTextSizeTime(float)
+    public com.scwang.smartrefresh.layout.header.ClassicsHeader setTextTimeMarginTop(float)
+    public com.scwang.smartrefresh.layout.header.ClassicsHeader setTimeFormat(java.text.DateFormat)
+com.scwang.smartrefresh.layout.header.TwoLevelHeader:
+    public com.scwang.smartrefresh.layout.header.TwoLevelHeader finishTwoLevel()
+    public com.scwang.smartrefresh.layout.header.TwoLevelHeader setEnablePullToCloseTwoLevel(boolean)
+    public com.scwang.smartrefresh.layout.header.TwoLevelHeader setEnableTwoLevel(boolean)
+    public com.scwang.smartrefresh.layout.header.TwoLevelHeader setFloorDuration(int)
+    public com.scwang.smartrefresh.layout.header.TwoLevelHeader setFloorRage(float)
+    public com.scwang.smartrefresh.layout.header.TwoLevelHeader setMaxRage(float)
+    public com.scwang.smartrefresh.layout.header.TwoLevelHeader setOnTwoLevelListener(com.scwang.smartrefresh.layout.api.OnTwoLevelListener)
+    public com.scwang.smartrefresh.layout.header.TwoLevelHeader setRefreshHeader(com.scwang.smartrefresh.layout.api.RefreshHeader)
+    public com.scwang.smartrefresh.layout.header.TwoLevelHeader setRefreshHeader(com.scwang.smartrefresh.layout.api.RefreshHeader,int,int)
+    public com.scwang.smartrefresh.layout.header.TwoLevelHeader setRefreshRage(float)
+com.scwang.smartrefresh.layout.internal.InternalClassics:
+    public static final byte ID_IMAGE_ARROW
+    public static final byte ID_IMAGE_PROGRESS
+    public static final byte ID_TEXT_TITLE
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setAccentColorId(int)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setArrowDrawable(android.graphics.drawable.Drawable)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setArrowResource(int)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setDrawableArrowSize(float)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setDrawableMarginRight(float)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setDrawableProgressSize(float)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setDrawableSize(float)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setFinishDuration(int)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setPrimaryColorId(int)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setProgressDrawable(android.graphics.drawable.Drawable)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setProgressResource(int)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setSpinnerStyle(com.scwang.smartrefresh.layout.constant.SpinnerStyle)
+    public com.scwang.smartrefresh.layout.internal.InternalClassics setTextSizeTitle(float)
+com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener
+com.scwang.smartrefresh.layout.util.DensityUtil:
+    public float px2dip(int)
+com.scwang.smartrefresh.layout.util.DesignUtil:
+    public void <init>()
+com.scwang.smartrefresh.layout.util.ScrollBoundaryUtil:
+    public void <init>()
+com.scwang.smartrefresh.layout.util.SmartUtil:
+    public void <init>()
+    public static int getColor(android.content.Context,int)
+com.scwang.smartrefresh.layout.util.ViscousFluidInterpolator:
+    private static final float VISCOUS_FLUID_SCALE
 com.tencent.mmkv.BuildConfig
 com.tencent.mmkv.MMKV$LibLoader
 com.tencent.mmkv.MMKV:
@@ -20151,9 +20222,6 @@ androidx.transition.TransitionPropagation:
     public abstract void captureValues(androidx.transition.TransitionValues)
     public abstract java.lang.String[] getPropagationProperties()
     public abstract long getStartDelay(android.view.ViewGroup,androidx.transition.Transition,androidx.transition.TransitionValues,androidx.transition.TransitionValues)
-com.chad.library.adapter.base.BaseQuickAdapter:
-    public com.chad.library.adapter.base.util.MultiTypeDelegate mMultiTypeDelegate
-com.chad.library.adapter.base.util.MultiTypeDelegate
 jp.co.cyberagent.android.gpuimage.GPUImageView$Size:
     public int height
     public int width
