@@ -45,7 +45,7 @@
 -dontskipnonpubliclibraryclasses
 #生成原类名和混淆后的类名的映射文件
 -optimizations !code/simplification/cast,!field/*,!class/merging/*
-#指定混淆时采用的算法
+#内部类不混淆
 -keepattributes *Annotation*,InnerClasses
 #注解不混淆
 -keepattributes Signature
@@ -149,6 +149,19 @@
 }
 #</natvie>
 
+#Log
+-assumenosideeffects class android.util.Log {
+    public static *** v(...);
+    public static *** d(...);
+    public static *** i(...);
+    public static *** w(...);
+    public static *** e(...);
+}
+
+# Keep the BuildConfig
+-keep class com.aiforward.guardian.BuildConfig* { *; }
+
+
 #---------------------------------基本指令以及一些固定不混淆的代码--结束-----------
 
 #---------------------------------第三方包--开始-------------------------------
@@ -234,6 +247,10 @@
      <init>(...);
 }
 
+
+#保留自定义的xlog文件夹下面的类、类成员和方法不被混淆
+-keep class com.text.xlog.** {<fields>;<methods>;
+}
 
 # coroutines协程管理类
 #----------------------------------第三方包--结束--------------------------

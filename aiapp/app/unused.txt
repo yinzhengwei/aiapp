@@ -9127,8 +9127,10 @@ com.example.aiapp.net.RequestClient:
     public static synthetic void fetch$default(com.example.aiapp.net.RequestClient,com.example.aiapp.base.IBaseView,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,int,java.lang.Object)
 com.example.aiapp.net.manager.OkHttpManager:
     public static synthetic void getOkClient$annotations()
+    public final void setTimeOut(long,long,long)
 com.example.aiapp.net.manager.RetrofitManager:
     private static synthetic void getRetrofitClient$annotations()
+    public final void init(java.lang.String,long,long,long)
     public final okhttp3.MultipartBody$Part[] uploadManyPhoto(java.util.List)
     public final okhttp3.MultipartBody$Part uploadSinglePhoto(java.lang.String)
 com.example.aiapp.util.ARouterUtil:
@@ -9138,6 +9140,7 @@ com.example.aiapp.util.ARouterUtil:
     public final void navigation(java.lang.String,android.os.Bundle)
     public final void navigation(java.lang.String,android.os.Bundle,android.app.Activity,int)
     public final void navigation(java.lang.String,java.lang.String,int)
+com.example.aiapp.util.AssetsDataManagerUtil
 com.example.aiapp.util.DownTimeUtil
 com.example.aiapp.util.GlideUtilKt:
     private static final boolean isSkipMemoryCache
@@ -9226,7 +9229,6 @@ com.scwang.smartrefresh.layout.SmartRefreshLayout:
     public com.scwang.smartrefresh.layout.SmartRefreshLayout finishLoadMore(boolean)
     public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore()
     public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(int)
-    public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(int,boolean,boolean)
     public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(boolean)
     public com.scwang.smartrefresh.layout.SmartRefreshLayout finishLoadMoreWithNoMoreData()
     public synthetic bridge com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMoreWithNoMoreData()
@@ -9315,7 +9317,6 @@ com.scwang.smartrefresh.layout.api.RefreshLayout:
     public abstract boolean autoRefresh(int,int,float)
     public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore()
     public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(int)
-    public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(int,boolean,boolean)
     public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(boolean)
     public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMoreWithNoMoreData()
     public abstract com.scwang.smartrefresh.layout.api.RefreshLayout finishRefresh()

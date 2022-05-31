@@ -2,7 +2,9 @@ package com.example.aiapp.util
 
 import com.alibaba.android.arouter.launcher.ARouter
 import com.example.aiapp.BuildConfig
+import com.example.aiapp.config.ParamsConstant
 import com.example.aiapp.core.launcher.CustomApplication
+import com.example.aiapp.net.manager.RetrofitManager
 
 /**
  * @author yzw
@@ -21,6 +23,8 @@ object ThirdInitUtil {
         }
         ARouter.init(application)
 
+        //初始化网络请求地址
+        RetrofitManager.init(ParamsConstant.BASE_URL)
     }
 
 }

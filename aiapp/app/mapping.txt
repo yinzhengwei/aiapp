@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 3.1.66
 # min_api: 24
-# pg_map_id: e8375fe
+# pg_map_id: 37c8ab9
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"1.0"}
 a3.NavigationCacheHelper$$ExternalSyntheticLambda0 -> a3.a:
@@ -30481,27 +30481,29 @@ com.example.aiapp.core.ui.home.HomeViewModel -> t2.g:
     7:7:androidx.lifecycle.MutableLiveData getText() -> j
 com.example.aiapp.core.ui.notifications.ChildFragment -> u2.c:
 # {"id":"sourceFile","fileName":"ChildFragment.kt"}
-    com.example.aiapp.core.ui.notifications.ListAdapter adapter -> h
-    19:21:void <init>() -> <init>
-    25:25:java.lang.Class getViewModel() -> f
-    60:67:void initData() -> j
-    28:57:void initView() -> k
+    int cid -> h
+    com.example.aiapp.core.ui.notifications.ListAdapter adapter -> i
+    19:22:void <init>() -> <init>
+    26:26:java.lang.Class getViewModel() -> f
+    55:64:void initData() -> j
+    29:52:void initView() -> k
     19:19:androidx.viewbinding.ViewBinding layoutInflate() -> l
     void $r8$lambda$X9QGQizb-sczBy9JIccgCWceiMY(com.example.aiapp.core.ui.notifications.ChildFragment,com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> p
       # {"id":"com.android.tools.r8.synthesized"}
     void $r8$lambda$clthUkskfOhOOyyixgNZ867aLcs(com.example.aiapp.core.ui.notifications.ChildFragment,java.util.List) -> q
       # {"id":"com.android.tools.r8.synthesized"}
-    74:82:void initAdapter() -> r
-    80:81:void initAdapter$lambda-4(com.example.aiapp.core.ui.notifications.ChildFragment,com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> s
-    85:98:void initRefresh() -> t
-    42:54:void initView$lambda-2(com.example.aiapp.core.ui.notifications.ChildFragment,java.util.List) -> u
-    23:23:com.example.aiapp.databinding.FgChildLayoutBinding layoutInflate() -> v
+    19:19:int access$getCid$p(com.example.aiapp.core.ui.notifications.ChildFragment) -> r
+    71:79:void initAdapter() -> s
+    77:78:void initAdapter$lambda-4(com.example.aiapp.core.ui.notifications.ChildFragment,com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> t
+    82:93:void initRefresh() -> u
+    43:49:void initView$lambda-2(com.example.aiapp.core.ui.notifications.ChildFragment,java.util.List) -> v
+    24:24:com.example.aiapp.databinding.FgChildLayoutBinding layoutInflate() -> w
 com.example.aiapp.core.ui.notifications.ChildFragment$initRefresh$1 -> u2.c$a:
 # {"id":"sourceFile","fileName":"ChildFragment.kt"}
     com.example.aiapp.core.ui.notifications.ChildFragment this$0 -> e
-    89:89:void <init>(com.example.aiapp.core.ui.notifications.ChildFragment) -> <init>
-    91:92:void onRefresh(com.scwang.smartrefresh.layout.api.RefreshLayout) -> a
-    95:95:void onLoadMore(com.scwang.smartrefresh.layout.api.RefreshLayout) -> e
+    83:83:void <init>(com.example.aiapp.core.ui.notifications.ChildFragment) -> <init>
+    85:86:void onRefresh(com.scwang.smartrefresh.layout.api.RefreshLayout) -> a
+    89:90:void onLoadMore(com.scwang.smartrefresh.layout.api.RefreshLayout) -> e
 com.example.aiapp.core.ui.notifications.ListAdapter -> com.example.aiapp.core.ui.notifications.ListAdapter:
 # {"id":"sourceFile","fileName":"ListAdapter.kt"}
     18:18:void <init>() -> <init>
@@ -30695,31 +30697,34 @@ com.example.aiapp.net.manager.OkHttpManager -> x2.a:
     com.example.aiapp.net.manager.OkHttpManager INSTANCE -> a
     long WRITE_TIMEOUT -> d
     long READ_TIMEOUT -> c
-    16:39:void <clinit>() -> <clinit>
+    16:45:void <clinit>() -> <clinit>
     14:14:void <init>() -> <init>
     14:14:long access$getCONNECT_TIMEOUT$p() -> a
     14:14:okhttp3.Interceptor access$getLoggingInterceptor$p() -> b
     14:14:long access$getREAD_TIMEOUT$p() -> c
     14:14:long access$getWRITE_TIMEOUT$p() -> d
-    1:23:okhttp3.OkHttpClient getOkClient() -> e
+    1:29:okhttp3.OkHttpClient getOkClient() -> e
 com.example.aiapp.net.manager.OkHttpManager$OkClient$2 -> x2.a$a:
 # {"id":"sourceFile","fileName":"OkHttpManager.kt"}
     com.example.aiapp.net.manager.OkHttpManager$OkClient$2 INSTANCE -> e
-    24:32:okhttp3.OkHttpClient invoke() -> a
-    23:23:java.lang.Object invoke() -> invoke
+    30:38:okhttp3.OkHttpClient invoke() -> a
+    29:29:java.lang.Object invoke() -> invoke
 com.example.aiapp.net.manager.RetrofitManager -> x2.b:
 # {"id":"sourceFile","fileName":"RetrofitManager.kt"}
-    kotlin.Lazy retrofitClient$delegate -> b
+    kotlin.Lazy retrofitClient$delegate -> c
     com.example.aiapp.net.manager.RetrofitManager INSTANCE -> a
-    21:21:void <clinit>() -> <clinit>
-    16:16:void <init>() -> <init>
-    38:38:java.lang.Object create(java.lang.Class) -> a
-    1:21:retrofit2.Retrofit getRetrofitClient() -> b
+    java.lang.String base_host -> b
+    17:37:void <clinit>() -> <clinit>
+    15:15:void <init>() -> <init>
+    15:15:java.lang.String access$getBase_host$p() -> a
+    54:57:java.lang.Object create(java.lang.Class) -> b
+    1:37:retrofit2.Retrofit getRetrofitClient() -> c
+    21:22:void init(java.lang.String) -> d
 com.example.aiapp.net.manager.RetrofitManager$retrofitClient$2 -> x2.b$a:
 # {"id":"sourceFile","fileName":"RetrofitManager.kt"}
     com.example.aiapp.net.manager.RetrofitManager$retrofitClient$2 INSTANCE -> e
-    22:33:retrofit2.Retrofit invoke() -> a
-    21:21:java.lang.Object invoke() -> invoke
+    38:49:retrofit2.Retrofit invoke() -> a
+    37:37:java.lang.Object invoke() -> invoke
 com.example.aiapp.util.ARouterUtil -> y2.a:
 # {"id":"sourceFile","fileName":"ARouterUtil.kt"}
     com.example.aiapp.util.ARouterUtil INSTANCE -> a
@@ -30782,8 +30787,8 @@ com.example.aiapp.util.SpacesItemTBDecoration -> y2.g:
 com.example.aiapp.util.ThirdInitUtil -> y2.h:
 # {"id":"sourceFile","fileName":"ThirdInitUtil.kt"}
     com.example.aiapp.util.ThirdInitUtil INSTANCE -> a
-    12:12:void <init>() -> <init>
-    17:24:void init(com.example.aiapp.core.launcher.CustomApplication) -> a
+    14:14:void <init>() -> <init>
+    19:28:void init(com.example.aiapp.core.launcher.CustomApplication) -> a
 com.example.aiapp.util.ToastUtil -> y2.j:
 # {"id":"sourceFile","fileName":"ToastUtil.kt"}
     android.widget.Toast mToast -> b
@@ -40404,29 +40409,30 @@ com.scwang.smartrefresh.layout.SmartRefreshLayout -> com.scwang.smartrefresh.lay
     226:227:void <init>(android.content.Context) -> <init>
     230:231:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     97:834:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    1848:1855:com.scwang.smartrefresh.layout.SmartRefreshLayout setHeaderMaxDragRate(float) -> A
-    2366:2370:com.scwang.smartrefresh.layout.SmartRefreshLayout setNoMoreData(boolean) -> B
-    2295:2298:com.scwang.smartrefresh.layout.SmartRefreshLayout setOnRefreshLoadMoreListener(com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener) -> C
-    2152:2152:com.scwang.smartrefresh.layout.SmartRefreshLayout setRefreshFooter(com.scwang.smartrefresh.layout.api.RefreshFooter) -> D
-    2164:2177:com.scwang.smartrefresh.layout.SmartRefreshLayout setRefreshFooter(com.scwang.smartrefresh.layout.api.RefreshFooter,int,int) -> E
-    2118:2118:com.scwang.smartrefresh.layout.SmartRefreshLayout setRefreshHeader(com.scwang.smartrefresh.layout.api.RefreshHeader) -> F
-    2130:2142:com.scwang.smartrefresh.layout.SmartRefreshLayout setRefreshHeader(com.scwang.smartrefresh.layout.api.RefreshHeader,int,int) -> G
-    1124:1153:void setStateDirectLoading() -> H
-    1156:1180:void setStateLoading() -> I
-    1183:1220:void setStateRefreshing() -> J
-    1029:1055:boolean startFlingIfNeed(java.lang.Float) -> K
-    86:86:com.scwang.smartrefresh.layout.api.RefreshLayout setEnableAutoLoadMore(boolean) -> a
-    86:86:com.scwang.smartrefresh.layout.api.RefreshLayout setHeaderMaxDragRate(float) -> b
-    2769:2769:boolean isEnableLoadMore() -> c
+    1983:1984:com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableOverScrollBounce(boolean) -> A
+    1848:1855:com.scwang.smartrefresh.layout.SmartRefreshLayout setHeaderMaxDragRate(float) -> B
+    2366:2370:com.scwang.smartrefresh.layout.SmartRefreshLayout setNoMoreData(boolean) -> C
+    2295:2298:com.scwang.smartrefresh.layout.SmartRefreshLayout setOnRefreshLoadMoreListener(com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener) -> D
+    2152:2152:com.scwang.smartrefresh.layout.SmartRefreshLayout setRefreshFooter(com.scwang.smartrefresh.layout.api.RefreshFooter) -> E
+    2164:2177:com.scwang.smartrefresh.layout.SmartRefreshLayout setRefreshFooter(com.scwang.smartrefresh.layout.api.RefreshFooter,int,int) -> F
+    2118:2118:com.scwang.smartrefresh.layout.SmartRefreshLayout setRefreshHeader(com.scwang.smartrefresh.layout.api.RefreshHeader) -> G
+    2130:2142:com.scwang.smartrefresh.layout.SmartRefreshLayout setRefreshHeader(com.scwang.smartrefresh.layout.api.RefreshHeader,int,int) -> H
+    1124:1153:void setStateDirectLoading() -> I
+    1156:1180:void setStateLoading() -> J
+    1183:1220:void setStateRefreshing() -> K
+    1029:1055:boolean startFlingIfNeed(java.lang.Float) -> L
+    86:86:com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(int,boolean,boolean) -> a
+    86:86:com.scwang.smartrefresh.layout.api.RefreshLayout setEnableAutoLoadMore(boolean) -> b
+    86:86:com.scwang.smartrefresh.layout.api.RefreshLayout setHeaderMaxDragRate(float) -> c
     1694:1700:boolean canScrollVertically(int) -> canScrollVertically
     1528:1528:boolean checkLayoutParams(android.view.ViewGroup$LayoutParams) -> checkLayoutParams
     807:828:void computeScroll() -> computeScroll
-    2085:2086:com.scwang.smartrefresh.layout.api.RefreshLayout setEnableNestedScroll(boolean) -> d
+    2769:2769:boolean isEnableLoadMore() -> d
     843:1021:boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
     748:799:boolean drawChild(android.graphics.Canvas,android.view.View,long) -> drawChild
-    88:88:boolean access$001(com.scwang.smartrefresh.layout.SmartRefreshLayout,android.view.MotionEvent) -> e
-    88:88:boolean access$101(com.scwang.smartrefresh.layout.SmartRefreshLayout,android.view.MotionEvent) -> f
-    88:88:boolean access$201(com.scwang.smartrefresh.layout.SmartRefreshLayout,android.view.MotionEvent) -> g
+    2085:2086:com.scwang.smartrefresh.layout.api.RefreshLayout setEnableNestedScroll(boolean) -> e
+    88:88:boolean access$001(com.scwang.smartrefresh.layout.SmartRefreshLayout,android.view.MotionEvent) -> f
+    88:88:boolean access$101(com.scwang.smartrefresh.layout.SmartRefreshLayout,android.view.MotionEvent) -> g
     86:86:android.view.ViewGroup$LayoutParams generateDefaultLayoutParams() -> generateDefaultLayoutParams
     86:86:android.view.ViewGroup$LayoutParams generateLayoutParams(android.util.AttributeSet) -> generateLayoutParams
     86:86:android.view.ViewGroup$LayoutParams generateLayoutParams(android.view.ViewGroup$LayoutParams) -> generateLayoutParams
@@ -40436,15 +40442,15 @@ com.scwang.smartrefresh.layout.SmartRefreshLayout -> com.scwang.smartrefresh.lay
     2234:2234:com.scwang.smartrefresh.layout.api.RefreshFooter getRefreshFooter() -> getRefreshFooter
     2244:2244:com.scwang.smartrefresh.layout.api.RefreshHeader getRefreshHeader() -> getRefreshHeader
     2253:2253:com.scwang.smartrefresh.layout.constant.RefreshState getState() -> getState
-    88:88:boolean access$301(com.scwang.smartrefresh.layout.SmartRefreshLayout,android.view.MotionEvent) -> h
-    1373:1409:android.animation.ValueAnimator animSpinner(int,int,android.view.animation.Interpolator,int) -> i
+    88:88:boolean access$201(com.scwang.smartrefresh.layout.SmartRefreshLayout,android.view.MotionEvent) -> h
+    88:88:boolean access$301(com.scwang.smartrefresh.layout.SmartRefreshLayout,android.view.MotionEvent) -> i
     1689:1689:boolean isNestedScrollingEnabled() -> isNestedScrollingEnabled
-    1416:1427:void animSpinnerBounce(float) -> j
-    2474:2474:com.scwang.smartrefresh.layout.SmartRefreshLayout finishLoadMore(int) -> k
-    2497:2592:com.scwang.smartrefresh.layout.SmartRefreshLayout finishLoadMore(int,boolean,boolean) -> l
-    2379:2380:com.scwang.smartrefresh.layout.SmartRefreshLayout finishRefresh() -> m
-    2400:2400:com.scwang.smartrefresh.layout.SmartRefreshLayout finishRefresh(int) -> n
-    2422:2464:com.scwang.smartrefresh.layout.SmartRefreshLayout finishRefresh(int,boolean) -> o
+    1373:1409:android.animation.ValueAnimator animSpinner(int,int,android.view.animation.Interpolator,int) -> j
+    1416:1427:void animSpinnerBounce(float) -> k
+    2474:2474:com.scwang.smartrefresh.layout.SmartRefreshLayout finishLoadMore(int) -> l
+    2497:2592:com.scwang.smartrefresh.layout.SmartRefreshLayout finishLoadMore(int,boolean,boolean) -> m
+    2379:2380:com.scwang.smartrefresh.layout.SmartRefreshLayout finishRefresh() -> n
+    2400:2400:com.scwang.smartrefresh.layout.SmartRefreshLayout finishRefresh(int) -> o
     390:496:void onAttachedToWindow() -> onAttachedToWindow
     724:744:void onDetachedFromWindow() -> onDetachedFromWindow
     326:386:void onFinishInflate() -> onFinishInflate
@@ -40457,24 +40463,24 @@ com.scwang.smartrefresh.layout.SmartRefreshLayout -> com.scwang.smartrefresh.lay
     1596:1601:void onNestedScrollAccepted(android.view.View,android.view.View,int) -> onNestedScrollAccepted
     1587:1590:boolean onStartNestedScroll(android.view.View,android.view.View,int) -> onStartNestedScroll
     1669:1677:void onStopNestedScroll(android.view.View) -> onStopNestedScroll
-    1533:1533:com.scwang.smartrefresh.layout.SmartRefreshLayout$LayoutParams generateDefaultLayoutParams() -> p
+    2422:2464:com.scwang.smartrefresh.layout.SmartRefreshLayout finishRefresh(int,boolean) -> p
     3251:3256:boolean post(java.lang.Runnable) -> post
     3261:3270:boolean postDelayed(java.lang.Runnable,long) -> postDelayed
-    1543:1544:com.scwang.smartrefresh.layout.SmartRefreshLayout$LayoutParams generateLayoutParams(android.util.AttributeSet) -> q
-    1538:1538:com.scwang.smartrefresh.layout.SmartRefreshLayout$LayoutParams generateLayoutParams(android.view.ViewGroup$LayoutParams) -> r
-    1062:1077:boolean interceptAnimatorByAction(int) -> s
+    1533:1533:com.scwang.smartrefresh.layout.SmartRefreshLayout$LayoutParams generateDefaultLayoutParams() -> q
+    1543:1544:com.scwang.smartrefresh.layout.SmartRefreshLayout$LayoutParams generateLayoutParams(android.util.AttributeSet) -> r
+    1538:1538:com.scwang.smartrefresh.layout.SmartRefreshLayout$LayoutParams generateLayoutParams(android.view.ViewGroup$LayoutParams) -> s
     2785:2787:void setDefaultRefreshFooterCreator(com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator) -> setDefaultRefreshFooterCreator
     2777:2778:void setDefaultRefreshHeaderCreator(com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator) -> setDefaultRefreshHeaderCreator
     2794:2795:void setDefaultRefreshInitializer(com.scwang.smartrefresh.layout.api.DefaultRefreshInitializer) -> setDefaultRefreshInitializer
     1683:1685:void setNestedScrollingEnabled(boolean) -> setNestedScrollingEnabled
     1237:1243:void setViceState(com.scwang.smartrefresh.layout.constant.RefreshState) -> setViceState
-    2764:2764:boolean isEnableRefresh() -> t
-    1473:1521:void moveSpinnerInfinitely(float) -> u
-    1104:1121:void notifyStateChanged(com.scwang.smartrefresh.layout.constant.RefreshState) -> v
-    1434:1470:void overSpinner() -> w
-    1226:1234:void resetStatus() -> x
-    1972:1973:com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableAutoLoadMore(boolean) -> y
-    1983:1984:com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableOverScrollBounce(boolean) -> z
+    1062:1077:boolean interceptAnimatorByAction(int) -> t
+    2764:2764:boolean isEnableRefresh() -> u
+    1473:1521:void moveSpinnerInfinitely(float) -> v
+    1104:1121:void notifyStateChanged(com.scwang.smartrefresh.layout.constant.RefreshState) -> w
+    1434:1470:void overSpinner() -> x
+    1226:1234:void resetStatus() -> y
+    1972:1973:com.scwang.smartrefresh.layout.SmartRefreshLayout setEnableAutoLoadMore(boolean) -> z
 com.scwang.smartrefresh.layout.SmartRefreshLayout$1 -> com.scwang.smartrefresh.layout.SmartRefreshLayout$b:
     205:205:void <init>() -> <init>
     209:209:com.scwang.smartrefresh.layout.api.RefreshFooter createRefreshFooter(android.content.Context,com.scwang.smartrefresh.layout.api.RefreshLayout) -> a
@@ -40610,10 +40616,11 @@ com.scwang.smartrefresh.layout.api.RefreshKernel -> b3.i:
     android.animation.ValueAnimator animSpinner(int) -> h
     com.scwang.smartrefresh.layout.api.RefreshKernel requestNeedTouchEventFor(com.scwang.smartrefresh.layout.api.RefreshInternal,boolean) -> i
 com.scwang.smartrefresh.layout.api.RefreshLayout -> b3.j:
-    com.scwang.smartrefresh.layout.api.RefreshLayout setEnableAutoLoadMore(boolean) -> a
-    com.scwang.smartrefresh.layout.api.RefreshLayout setHeaderMaxDragRate(float) -> b
-    boolean isEnableLoadMore() -> c
-    com.scwang.smartrefresh.layout.api.RefreshLayout setEnableNestedScroll(boolean) -> d
+    com.scwang.smartrefresh.layout.api.RefreshLayout finishLoadMore(int,boolean,boolean) -> a
+    com.scwang.smartrefresh.layout.api.RefreshLayout setEnableAutoLoadMore(boolean) -> b
+    com.scwang.smartrefresh.layout.api.RefreshLayout setHeaderMaxDragRate(float) -> c
+    boolean isEnableLoadMore() -> d
+    com.scwang.smartrefresh.layout.api.RefreshLayout setEnableNestedScroll(boolean) -> e
 com.scwang.smartrefresh.layout.api.ScrollBoundaryDecider -> b3.k:
     boolean canLoadMore(android.view.View) -> a
     boolean canRefresh(android.view.View) -> b

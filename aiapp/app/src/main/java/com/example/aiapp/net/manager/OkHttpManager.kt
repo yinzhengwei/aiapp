@@ -13,9 +13,15 @@ import java.util.concurrent.TimeUnit
  */
 object OkHttpManager {
 
-    private val CONNECT_TIMEOUT = 20L
-    private val READ_TIMEOUT = 20L
-    private val WRITE_TIMEOUT = 10L
+    private var CONNECT_TIMEOUT = 20L
+    private var READ_TIMEOUT = 20L
+    private var WRITE_TIMEOUT = 10L
+
+    fun setTimeOut(connectTimeOut: Long, readTimeOut: Long, writeTimeOut: Long) {
+        CONNECT_TIMEOUT = connectTimeOut
+        READ_TIMEOUT = readTimeOut
+        WRITE_TIMEOUT = writeTimeOut
+    }
 
     //---------------------------------OkHttp-------------------------------
     @JvmStatic//当前注解表示支持Java语音中直接调用实例
