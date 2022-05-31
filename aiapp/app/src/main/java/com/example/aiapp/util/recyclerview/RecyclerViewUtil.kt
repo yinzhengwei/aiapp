@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.example.aiapp.util.recyclerview.decoration.SpacesItemDecoration
+import com.example.aiapp.util.recyclerview.decoration.SpacesItemLRDecoration
+import com.example.aiapp.util.recyclerview.decoration.SpacesItemTBDecoration
 
 /**
  * @author yzw

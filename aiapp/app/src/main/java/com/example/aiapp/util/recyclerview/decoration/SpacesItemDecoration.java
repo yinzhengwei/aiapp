@@ -1,4 +1,4 @@
-package com.example.aiapp.util;
+package com.example.aiapp.util.recyclerview.decoration;
 
 import android.graphics.Rect;
 import android.view.View;
