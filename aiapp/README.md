@@ -7,7 +7,7 @@ plugins {
     id 'kotlin-parcelize'
 }
 ```
-- 在需要序列化的class上方增加注解：@Parcelize，并且实现: Parcelable接口即可
+- 在需要序列化的class上方增加注解：@kotlinx.parcelize.Parcelize，并且实现: android.os.Parcelable接口即可
 
 
 ## 协程（异步处理）
