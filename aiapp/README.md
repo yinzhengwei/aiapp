@@ -1,6 +1,12 @@
 
 ## 序列化
-- 序列化插件：id 'kotlin-parcelize'
+- 序列化插件：
+```
+//app目录下的build.gradle中添加以下配置
+plugins {
+    id 'kotlin-parcelize'
+}
+```
 - 在需要序列化的class上方增加注解：@Parcelize，并且实现: Parcelable接口即可
 
 
