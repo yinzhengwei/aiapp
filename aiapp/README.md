@@ -86,3 +86,9 @@
     https://gitee.com/scwang90/SmartRefreshLayout
     https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_property.md
 
+
+## monkey测试
+- 执行命令：adb shell
+- 执行monkey命令：monkey -s 100000 -p com.example.aiapp --throttle 300  --pct-touch 45 --pct-motion 45 --pct-appswitch 3 --pct-syskeys 3 --pct-anyevent 2 --pct-flip 2 --ignore-crashes --ignore-timeouts --ignore-security-exceptions --ignore-native-crashes 10000000 > /data/monkey.log &
+- 到处monkey日志：logcat -v time *:E > /data/locatE.log &
+- 停止monkey：执行命令：top | grep monkey；然后根据展示的monkey列表选择要停止的id执行命令：kill xxx

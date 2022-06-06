@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <!--    安卓11的时候继续强化对SD卡读写的管理，引入了MANAGE_EXTERNAL_STORAGE权限，
             而之前的WRITE_EXTERNAL_STORAGE已经失效了。                            -->
